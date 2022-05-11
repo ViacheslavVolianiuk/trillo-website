@@ -79,7 +79,10 @@ body {
   margin-right: 4.5rem; }
 
 .user-reviews {
-  flex: 1; }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 .logo {
   height: 3.25rem;
@@ -291,6 +294,13 @@ body {
   transition: all 0.2s; }
   .btn-inline:hover {
     color: var(--color-grey-dark-1); }
+  .btn-inline span {
+    margin-left: 3px;
+    transition: all 0.2s; }
+  .btn-inline:hover {
+    color: var(--color-grey-dark-1); }
+    .btn-inline:hover span {
+      margin-left: 8px; }
   .btn-inline:focus {
     outline: none;
     animation: pulsate 1s infinite; }
@@ -336,13 +346,16 @@ body {
   color: var(--color-grey-dark-3);
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  transition: all 3s ease-out; }
   .recommend__photo {
     box-sizing: content-box;
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
     border: 3px solid #fff; }
+    .recommend__photo:hover {
+      transform: scale(1.2); }
     .recommend__photo:not(:last-child) {
       margin-right: -1.5rem; }
 
