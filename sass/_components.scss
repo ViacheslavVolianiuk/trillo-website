@@ -106,13 +106,57 @@
 }
 
 .side-nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 3.5rem;
   &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
   }
-  &__link {
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    top: 0;
+    left: 0;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transition: transform 0.2s, width 0.4s 0.2s ease-out, background-color 0.1s;
+  }
+
+  &__item:hover::before,
+  &__item--active::before {
+    transform: scaleY(1);
+    width: 100%;
+  }
+
+  &__item:active::before {
+    background-color: var(--color-primary-light);
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
   }
   &__icon {
     width: 1.75rem;
     height: 1.75rem;
+    fill: currentColor;
+    margin-right: 2rem;
   }
 }
 
@@ -121,4 +165,15 @@
   text-align: center;
   padding: 2.5rem;
   color: var(--color-grey-light-4);
+}
+
+//github link Ukraine
+.github-link:link,
+.github-link:visited {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #0057b7, #ffdd00);
+  color: transparent;
 }
